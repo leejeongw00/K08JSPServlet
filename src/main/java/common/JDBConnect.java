@@ -62,8 +62,13 @@ public class JDBConnect {
 			e.printStackTrace();
 		}
 	}
+	//인자생성자2
 	public JDBConnect(ServletContext application) {
 		try {
+			/*
+			JSP에서는 내장객체를 즉시 사용할 수 있지만 Java에서는 매개변수를 통해
+			전달받은 후 사용할 수 있다. DB연결은 
+			 */
 			String driver = application.getInitParameter("OracleDriver");
 			Class.forName(driver);
 			String url = application.getInitParameter("OracleURL");

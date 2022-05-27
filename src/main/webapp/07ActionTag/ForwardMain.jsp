@@ -32,7 +32,8 @@ request.setAttribute("rAttr", "계백");
 	<h2>액션 태그를 이용한 포워딩</h2>
 	<jsp:forward page="/07ActionTag/ForwardSub.jsp" />
 	<%
-	request.getRequestDispatcher("ForwardSub.jsp").forward(request, response);
+	//자바코드를 통한 포워딩..
+	//request.getRequestDispatcher("ForwardSub.jsp").forward(request, response);
 	%>
 </body>
 </html>
