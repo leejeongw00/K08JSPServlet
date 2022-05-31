@@ -84,6 +84,19 @@
 	    <filter-name>SetCharEncoding</filter-name>
 	    <url-pattern>/*</url-pattern>
   	</filter-mapping>
+  	
+  	
+  	<!-- 게시판 페이징 처리를 위한 파라미터 추가 -->
+  	<!-- 한 페이지에 출력할 게시물의 갯수 -->
+  	<context-param>
+  		<param-name>POSTS_PER_PAGE</param-name>
+  		<param-value>10</param-value>
+  	</context-param>
+  	<!-- 한 블럭당 출력할 페이지번호의 갯수 -->
+  	<context-param>
+  		<param-name>POSTS_PER_BLOCK</param-name>
+  		<param-value>5</param-value>
+  	</context-param>
 	
 	
 	
