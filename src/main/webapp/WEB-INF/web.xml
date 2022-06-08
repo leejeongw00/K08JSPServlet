@@ -141,15 +141,41 @@
 	</servlet-mapping>
 	
 	
-	<servlet>
-		<servlet-name>MVCBoardList</servlet-name>
-		<servlet-class>model2.mvcboard.ListController</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>MVCBoardList</servlet-name>
-		<url-pattern>/mvcboard/list.do</url-pattern>
-	</servlet-mapping>
+	<!-- Model2 방식의 자료실형 게시판 구현하기 -->
+   <!-- 리스트(목록) 서블릿 매핑 -->
+   <servlet>
+      <servlet-name>MVCBoardList</servlet-name>
+      <servlet-class>model2.mvcboard.ListController</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>MVCBoardList</servlet-name>
+      <url-pattern>/mvcboard/list.do</url-pattern>
+   </servlet-mapping>
+
 	
 	
+	
+	<!-- 글쓰기로 진입하기 위한 매핑 -->
+	<!--
+      <url-pattern>으로 지정된 요청명으로 요청이 들어오면
+      <servlet-name>에 지정된 서블릿 클래스를 찾는다.
+      <servlet> 앨리먼트 하위에 등록된 서블릿명을 찾아서
+      해당 요청을 전달한다. 이때 <servlet-class> 앨리먼트에는
+      패키지명을 포함한 클래스의 풀경로를 기술해야 한다.
+   -->
+	
+   <servlet>
+      <servlet-name>MVCBoardWrite</servlet-name>
+      <servlet-class>model2.mvcboard.WriteController</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>MVCBoardWrite</servlet-name>
+      <url-pattern>/mvcboard/write.do</url-pattern>
+   </servlet-mapping>
+   
+   <context-param>
+      <param-name>maxPostSize</param-name>
+      <param-value>1024000</param-value>
+   </context-param>
 	
 </web-app>
