@@ -34,9 +34,9 @@
         <tr>
             <th width="10%">번호</th>
             <th width="*">제목</th>
-            <th width="15%">작성자</th>
+            <th width="10%">작성자</th>
             <th width="10%">조회수</th>
-            <th width="15%">작성일</th>
+            <th width="15%">조회수</th>
             <th width="8%">첨부</th>
         </tr>
 <!-- 게시물이 없을 때 -->

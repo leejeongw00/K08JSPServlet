@@ -94,5 +94,18 @@ public class FileUtil {
 		   System.out.println("예외가 발생하였습니다.");
 		   e.printStackTrace();
 	   }
-   }
+    }
+   	//서버에 저장된 파일을 삭제
+ 	public static void deleteFile(HttpServletRequest req, String directory, String filename) {
+ 		//디렉토리의 물리적경로(절대경로)를 얻어옴
+ 		String sDirectory = req.getServletContext().getRealPath(directory);
+ 		//물리적 경로와 파일명을 통해 File객체 생성.
+ 		//중간에 들어가는 separator는 운영체제에서 사용하는 경로의 구분기호를 자동으로 삽입해준다.
+ 		//(윈도우:\ 리눅스:/)
+ 		File file = new File(sDirectory + File.separator + filename);
+ 		if(file.exists()) {
+ 			//파일이 해당 경로에 있는 경우 삭제한다.
+ 			file.delete();
+ 		}
+ 	}
 }

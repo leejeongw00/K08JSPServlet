@@ -38,7 +38,7 @@ public class WriteController extends HttpServlet{
       
       MultipartRequest mr = FileUtil.uploadFile(req, saveDirectory, maxPostSize);
       if(mr == null) {
-         JSFunction.alertLocation(resp, "첨부 파일이 제한 용량을 초과합니다.",
+         JSFunction.alertLocation(resp, "제한용량초과 or 디렉토리 경로를 확인하세요.",
         		 					"../mvcboard/write.do");
       }
       
